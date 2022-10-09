@@ -18,7 +18,7 @@ if uploaded_file is not None:
         st.image(img,width=470)  
     start = time.time()
     img = img.convert("RGB")
-    img = img.resize((240,320), Image.NEAREST)
+    img = img.resize((320,240), Image.NEAREST)
     x = np.array(img, dtype=np.float)
     x -= np.mean(x, keepdims=True)
     x /= np.std(x, keepdims=True) + 1e-6
