@@ -23,9 +23,11 @@ if uploaded_file is not None:
     x -= np.mean(x, keepdims=True)
     x /= np.std(x, keepdims=True) + 1e-6
     x = np.expand_dims(x, axis = 0)
-    y = ActionText[np.argmax(model.predict(x)[0])]
-    print(y)
+    y = model.predict(x)[0]
     end = time.time()
+    print(y)
+    print(y.shape)
+    y1, y2 = np.argsort(y)[::-1][:2]
     with col2:
         st.write(f"Action performed by the driver - \"{y}\"")
         st.write(f"time taken to find the Action - {(end-start)*10**3:.03f}ms")
