@@ -25,8 +25,6 @@ if uploaded_file is not None:
     x = np.expand_dims(x, axis = 0)
     y = model.predict(x)[0]
     end = time.time()
-    print(y)
-    print(y.shape)
     y1, y2 = np.argsort(y)[::-1][:2]
     with col2:
         st.write(f"Action performed by the driver - \"{ActionText[y1]}\"")
