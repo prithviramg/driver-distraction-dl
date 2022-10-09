@@ -27,8 +27,8 @@ if uploaded_file is not None:
     end = time.time()
     y1, y2 = np.argsort(y)[::-1][:2]
     with col2:
-        st.write(f"Action performed by the driver - \"{ActionText[y1]}\"")
-        st.write(f"Action performed by the driver - \"{ActionText[y2]}\"")
+        st.write(f"first probable action - \"{ActionText[y1]}\"")
+        st.write(f"second probable action - \"{ActionText[y2]}\"")
         st.write(f"time taken to find the Action - {(end-start)*10**3:.03f}ms")
 
 
